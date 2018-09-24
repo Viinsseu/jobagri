@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { ListOffreComponent } from './list-offre/list-offre.component';
-import { ListOffreService } from './services/list-offre.service.ts';
+import { listOffreService } from './services/list-offre.services';
 
 @NgModule({
   declarations: [
@@ -14,7 +14,7 @@ import { ListOffreService } from './services/list-offre.service.ts';
     BrowserModule
   ],
   providers: [
-    ListOffreService
+    listOffreService
   ],
   bootstrap: [AppComponent]
 })

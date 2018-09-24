@@ -4,7 +4,7 @@ export class listOffreService {
 
   private offres;
 
-  
+
 
 }
       
