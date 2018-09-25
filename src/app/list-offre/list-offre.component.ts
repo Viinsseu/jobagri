@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ListOffreService } from '../services/list-offre.service';
+import { Offre } from '../models/offre.model';
 
 @Component({
   selector: 'app-list-offre',
@@ -7,9 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListOffreComponent implements OnInit {
 
-  constructor() { }
+  offres: Offre[];
+
+  constructor(private listoffre: ListOffreService) { }
 
   ngOnInit() {
+    this.listoffre.getOffres().subscribe(
+      (data: Offre[]) => {
+        this.offres = data;
+      },
+      (error) => {
+        console.log('Erreur lecture offres : ' + error);
+      }
+    );
+
+    // console.log(this.offres[0]);
   }
 
 }

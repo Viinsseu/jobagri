@@ -1,9 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
+
 
 import { AppComponent } from './app.component';
 import { ListOffreComponent } from './list-offre/list-offre.component';
-import { listOffreService } from './services/list-offre.services';
+import { ListOffreService } from './services/list-offre.service';
 
 @NgModule({
   declarations: [
@@ -11,10 +13,11 @@ import { listOffreService } from './services/list-offre.services';
     ListOffreComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
   ],
   providers: [
-    listOffreService
+    ListOffreService
   ],
   bootstrap: [AppComponent]
 })
